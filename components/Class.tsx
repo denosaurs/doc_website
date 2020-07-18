@@ -66,14 +66,14 @@ export function ClassCard({
               {" "}
               <span className="keyword">extends</span>{" "}
               {extendsNode ? (
-                <Link
-                  href="/https/[...url]"
-                  as={`#${
+                <a
+                  href={`#${
                     extendsNode.scope ? extendsNode.scope.join(".") + "." : ""
                   }${extendsNode.name}`}
+                  className="link"
                 >
-                  <a className="link">{extendsNode.name}</a>
-                </Link>
+                  {extendsNode.name}
+                </a>
               ) : (
                 extends_
               )}

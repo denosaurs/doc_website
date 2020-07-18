@@ -14,7 +14,7 @@ const Page: NextPage = () => {
     );
   }
   const url = typeof query.url === "string" ? query.url : query.url.join("/");
-  return <Documentation entrypoint={"https://" + url} name={url} />;
+  return <Documentation entrypoint={url} name={url} />;
 };
 
 export default Page;
