@@ -63,14 +63,8 @@ export const SinglePage = memo(
         >
           <div className="max-w-screen-lg px-4 sm:px-6 md:px-8 pb-12">
             <div className="py-6">
-              <a
-                className="break-words cursor-pointer link"
-                href={props.entrypoint}
-              >
-                {props.entrypoint}
-              </a>
               {hasNone ? (
-                <h1 className="pt-4 pb-1 text-xl text-gray-900">
+                <h1 className="pb-1 text-xl text-gray-900">
                   This module has no exports that are recognized by deno doc.
                 </h1>
               ) : (
@@ -93,7 +87,7 @@ export const CardList = memo(
         {groups.functions.length > 0 ? (
           <div>
             {!nested && (
-              <div className="leading-tight text-gray-900 font-bold text-2xl mt-8 mb-4">
+              <div className="leading-tight text-gray-900 font-bold text-2xl mb-4">
                 Functions
               </div>
             )}
@@ -277,12 +271,6 @@ export function SimpleCard({
           ) : null}
           {suffix}
         </div>
-        <a
-          href={node.location.filename + "#L" + node.location.line}
-          className="pl-2 text-gray-600 break-words hover:text-gray-800 hover:underline"
-        >
-          [src]
-        </a>
       </div>
 
       {node.jsDoc ? (
@@ -347,14 +335,6 @@ export function SimpleSubCard({
             </span>
           ) : null}
         </div>
-        {node.location ? (
-          <a
-            href={node.location.filename + "#L" + node.location.line}
-            className="pl-2 text-xs text-gray-600 break-words hover:text-gray-800 hover:underline"
-          >
-            [src]
-          </a>
-        ) : null}
       </div>
       {node.jsDoc ? (
         <div className="mt-1 text-xs">

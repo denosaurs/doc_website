@@ -57,15 +57,6 @@ export const Documentation = ({
       <div className="flex flex-col items-center justify-center h-full p-4 text-center">
         <div className="text-3xl text-gray-800">{title}</div>
         <div className="mt-2 text-lg">{details}</div>
-        <Link href="/">
-          <a className="mt-4 text-xl link">Go back home</a>
-        </Link>
-        <a
-          href="https://github.com/denoland/doc_website/issues"
-          className="mt-5 text-sm link"
-        >
-          Report Issue
-        </a>
       </div>
     );
   }
