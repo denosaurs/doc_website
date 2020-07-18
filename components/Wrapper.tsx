@@ -74,20 +74,14 @@ export function Wrapper(props: {
                     </button>
                   </div>
                   <div className="bg-gray-100 pb-4 pt-4 border-b border-gray-200">
-                    <Link href="/">
-                      <a className="block flex items-center flex-shrink-0 px-4">
-                        <img
-                          src="/logo.svg"
-                          alt="logo"
-                          className="w-auto h-12"
-                        />
-                        <div className="mx-4 flex flex-col justify-center">
-                          <div className="font-bold text-gray-900 leading-6 text-2xl tracking-tight">
-                            deno doc
-                          </div>
+                    <span className="flex items-center flex-shrink-0 px-4">
+                      <img src="/logo.svg" alt="logo" className="w-auto h-12" />
+                      <div className="mx-4 flex flex-col justify-center">
+                        <div className="font-bold text-gray-900 leading-6 text-2xl tracking-tight">
+                          deno doc
                         </div>
-                      </a>
-                    </Link>
+                      </div>
+                    </span>
                     {flattend ? (
                       <header className="px-4 pt-3 sm:px-6 sm:pt-4">
                         {props.timestamp ? (
@@ -102,11 +96,6 @@ export function Wrapper(props: {
                             </a>
                           </div>
                         ) : null}
-                        <p className="mt-2 text-sm">
-                          <Link href="/about">
-                            <a className="link">About doc.deno.land</a>
-                          </Link>
-                        </p>
                       </header>
                     ) : null}
                   </div>
@@ -122,16 +111,14 @@ export function Wrapper(props: {
         <div className="hidden md:flex md:flex-shrink-0">
           <div className="flex flex-col w-72 border-r border-gray-200 bg-gray-50">
             <div className="bg-gray-100 pb-4 pt-4 border-b border-gray-200">
-              <Link href="/">
-                <a className="block flex items-center flex-shrink-0 px-4">
-                  <img src="/logo.svg" alt="logo" className="w-auto h-12" />
-                  <div className="mx-4 flex flex-col justify-center">
-                    <div className="font-bold text-gray-900 leading-6 text-2xl tracking-tight">
-                      deno doc
-                    </div>
+              <span className="flex items-center flex-shrink-0 px-4">
+                <img src="/logo.svg" alt="logo" className="w-auto h-12" />
+                <div className="mx-4 flex flex-col justify-center">
+                  <div className="font-bold text-gray-900 leading-6 text-2xl tracking-tight">
+                    deno doc
                   </div>
-                </a>
-              </Link>
+                </div>
+              </span>
               {flattend ? (
                 <header className="px-4 pt-3 sm:px-6 sm:pt-4">
                   {props.timestamp ? (
@@ -146,11 +133,6 @@ export function Wrapper(props: {
                       </a>
                     </div>
                   ) : null}
-                  <p className="mt-2 text-sm">
-                    <Link href="/about">
-                      <a className="link">About doc.deno.land</a>
-                    </Link>
-                  </p>
                 </header>
               ) : null}
             </div>
