@@ -8,17 +8,21 @@ import { getData, DocsData } from "../util/data";
 import { SinglePage } from "./SinglePage";
 
 export const Documentation = ({
-  entrypoint,
+  url,
+  reload,
+  lib,
   name,
 }: {
-  entrypoint: string;
+  url: string;
+  reload: boolean;
+  lib: boolean;
   name: string;
 }) => {
   const [loadCount, forceReload] = useReducer((i) => ++i, 0);
   const { data, error } = useSWR<DocsData, string>(
-    [entrypoint, loadCount],
+    [url, loadCount],
     () =>
-      getData(entrypoint, "", loadCount > 0).catch((err) => {
+      getData(url, loadCount > 0 || reload, lib).catch((err) => {
         throw err?.message ?? err.toString();
       }),
     {
@@ -72,7 +76,7 @@ export const Documentation = ({
       </Head>
       <SinglePage
         forceReload={forceReload}
-        entrypoint={entrypoint}
+        entrypoint={url}
         data={data}
       />
     </>

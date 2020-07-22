@@ -18,14 +18,16 @@ export interface DocsData {
 }
 
 export async function getData(
-  entrypoint: string,
-  hostname: string,
-  forceReload?: boolean
+  url: string,
+  reload: boolean = false,
+  lib: boolean = false,
 ): Promise<DocsData> {
+  const query = new URLSearchParams();
+  query.append("url", url);
+  query.append("reload", String(reload));
+  query.append("lib", String(lib));
   const req = await fetch(
-    `${hostname}/api/docs?entrypoint=${encodeURIComponent(entrypoint)}${
-      forceReload ? "&force_reload=true" : ""
-    }`
+    `/api/docs?${query}`
   );
   if (!req.ok) throw new Error((await req.json()).error);
   const resp = await req.json();

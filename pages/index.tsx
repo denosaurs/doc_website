@@ -14,7 +14,9 @@ const Page: NextPage = () => {
     );
   }
   const url = typeof query.url === "string" ? query.url : query.url.join("/");
-  return <Documentation entrypoint={url} name={url} />;
+  const reload = query.reload === "true";
+  const lib = query.lib === "true";
+  return <Documentation url={url} reload={reload} lib={lib} name={url} />;
 };
 
 export default Page;
